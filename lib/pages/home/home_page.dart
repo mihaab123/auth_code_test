@@ -1,3 +1,4 @@
+import 'package:auth_code_test/pages/login/login_page.dart';
 import 'package:auth_code_test/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,10 @@ class HomePage extends StatelessWidget {
             child: SizedBox(
               height: 50,
               child: MainButton(
-                callback: () {},
+                callback: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 text: 'Login',
               ),
             ),
