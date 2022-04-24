@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
               Column(
                 children: [
                   LoginTextField(controller: controller),
-                  LoginButton(),
+                  LoginButton(controller: controller),
                   LoginPrivacy()
                 ],
               ),
