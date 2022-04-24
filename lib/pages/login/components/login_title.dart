@@ -1,3 +1,4 @@
+import 'package:auth_code_test/widgets/list_tile_title.dart';
 import 'package:flutter/material.dart';
 
 class LoginTitle extends StatelessWidget {
@@ -12,18 +13,10 @@ class LoginTitle extends StatelessWidget {
             iconSize: 25,
             onPressed: () => Navigator.pop(context),
             icon: const Icon(Icons.arrow_back)),
-        const Expanded(
-          child: ListTile(
-            title: Text(
-              "Connect your wallet",
-              style: TextStyle(fontSize: 28),
-            ),
-            subtitle: Text(
-              "We’ll send you a confirmation code",
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-        ),
+        const ListTileTitle(
+          subtitle: 'We’ll send you a confirmation code',
+          title: 'Connect your wallet',
+        )
       ],
     );
   }

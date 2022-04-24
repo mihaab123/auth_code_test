@@ -13,3 +13,4 @@ const Map<int, Color> mainColors = {
   900: Color.fromRGBO(197, 255, 41, 1),
 };
 const mainColor = Color.fromRGBO(197, 255, 41, 1);
+const borderColor = Color.fromRGBO(236, 236, 236, 1);
