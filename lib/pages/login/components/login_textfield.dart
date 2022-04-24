@@ -14,41 +14,45 @@ class _LoginTextFieldState extends State<LoginTextField> {
   bool showFlag = true;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      decoration: BoxDecoration(
-          border: Border.all(color: borderColor),
-          borderRadius: BorderRadius.circular(10)),
-      child: TextField(
-        onChanged: (value) {
-          setState(() {
-            if (value.isNotEmpty) {
-              showFlag = value.contains("+");
-            } else {
-              showFlag = true;
-            }
-          });
-        },
-        controller: widget.controller,
-        decoration: InputDecoration(
-          prefixIcon: showFlag
-              ? Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: SvgPicture.asset(
-                    "assets/flag.svg",
-                    height: 12,
-                    width: 16,
-                  ),
-                )
-              : null,
-          hintText: "Phone number or Email",
-          hintStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          label: const Text("Phone number or Email"),
-          labelStyle: const TextStyle(fontSize: 18, color: Colors.black),
-          border: InputBorder.none,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+            border: Border.all(color: borderColor),
+            borderRadius: BorderRadius.circular(10)),
+        child: TextField(
+          onChanged: (value) {
+            setState(() {
+              if (value.isNotEmpty) {
+                showFlag = value.contains("+");
+              } else {
+                showFlag = true;
+              }
+            });
+          },
+          controller: widget.controller,
+          decoration: InputDecoration(
+            prefixIcon: showFlag
+                ? Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SvgPicture.asset(
+                      "assets/flag.svg",
+                      height: 12,
+                      width: 16,
+                    ),
+                  )
+                : null,
+            hintText: "Phone number or Email",
+            hintStyle:
+                const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            label: const Text("Phone number or Email"),
+            labelStyle: const TextStyle(fontSize: 18, color: Colors.black),
+            border: InputBorder.none,
+          ),
+          cursorColor: Colors.black,
+          style: const TextStyle(color: Colors.black),
         ),
-        cursorColor: Colors.black,
-        style: const TextStyle(color: Colors.black),
       ),
     );
   }

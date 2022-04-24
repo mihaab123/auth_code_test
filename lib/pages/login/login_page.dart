@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   LoginTextField(controller: controller),
                   LoginButton(controller: controller),
-                  LoginPrivacy()
+                  const LoginPrivacy()
                 ],
               ),
             ],
