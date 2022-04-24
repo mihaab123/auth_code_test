@@ -15,8 +15,16 @@ class LoginButton extends StatelessWidget {
           debugPrint("Wrong phone or email");
         } else if (isPhone(controller.text)) {
           await FireBaseUtils().verifyPhoneNumber(controller.text);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => VerificationCodePage()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const VerificationCodePage()));
+        } else if (isEmail(controller.text)) {
+          await FireBaseUtils().verifyPhoneNumber(controller.text);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const VerificationCodePage()));
         }
       },
       text: 'Continue',

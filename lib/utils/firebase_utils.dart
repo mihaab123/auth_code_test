@@ -17,4 +17,18 @@ class FireBaseUtils {
       codeAutoRetrievalTimeout: (String verificationId) {},
     );
   }
+
+  verifyEmail(String email) async {
+    var actionCodeSettings = ActionCodeSettings(
+      url: 'https://authtesttest.page.link/finishSignUp',
+      dynamicLinkDomain: 'authtesttest.page.link',
+      androidPackageName: 'com.example.auth_code_test',
+      androidInstallApp: true,
+      androidMinimumVersion: '12',
+      iOSBundleId: 'com.example.auth_code_test',
+      handleCodeInApp: true,
+    );
+    await firebaseAuth.sendSignInLinkToEmail(
+        email: email, actionCodeSettings: actionCodeSettings);
+  }
 }
